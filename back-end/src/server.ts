@@ -1,10 +1,16 @@
+import "reflect-metadata";
 import express from 'express';
+import 'express-async-errors';
+
+import { router } from './routes/routes';
+
+import './database';
 
 const app = express();
 
-app.get("/", (request, response) => {
-    response.json({ message: "Hello World" });
-});
+app.use(express.json());
+
+app.use(router);
 
 const port = process.env.PORT || 3000;
 
