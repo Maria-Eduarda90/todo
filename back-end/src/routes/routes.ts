@@ -1,11 +1,10 @@
 import { Router } from 'express';
+import { TodoController } from '../controllers/TodoController'
 
 const router = Router();
 
-router.get("/", (request, response) => {
-    response.json({
-        message: "Hello"
-    })
-})
+const todoController = new TodoController();
+
+router.post("/todo", todoController.create);
 
 export { router }
