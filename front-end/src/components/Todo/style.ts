@@ -6,7 +6,8 @@ export const container = styled.div `
     justify-content: center;
     flex-direction: column;
     width: 50vw;
-
+    margin-left: auto;
+    margin-right: auto;
     .container {
         display: flex;
         justify-content: space-between;
