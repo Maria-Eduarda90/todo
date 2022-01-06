@@ -22,6 +22,18 @@ class TodoController {
 
         return response.status(201).json(todo);
     }
+
+    async delete(request: Request, response:Response){
+        const todoDelete = getCustomRepository(TodoRepositories);
+        const { id } = request.params;
+        const todoAlreadyExists = await todoDelete.findOne(id);
+        if(todoAlreadyExists){
+            todoDelete.remove(todoAlreadyExists);
+            return response.status(200).json({ message: "apagado com sucesso" });
+        }
+
+        return response.status(400).json({ message: "Error" });
+    }
 }
 
 export { TodoController }
