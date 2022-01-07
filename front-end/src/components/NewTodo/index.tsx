@@ -7,32 +7,31 @@ export const NewTodo = () => {
     const navigate = useNavigate();
     const [ description, setDescription ] = useState('');
 
-    async function handleSubmit(event: React.FormEvent<HTMLFormElement>){
-        try {
-            event.preventDefault();
+    const handlerSubmit = async (e: FormEvent) => {
+        console.log('entrada')
 
-            const data = new FormData();
+        e.preventDefault();
 
-            data.append('description', description);
+        const data = new FormData();
 
-            await api.post('todo', data);
-            console.log("data", data);
+        data.append('description', description);
 
-            navigate('/');
-        } catch (error){
-            alert('Erro interno, tente novamente mais tarde! ' + error);
-        }
+        await api.post('/todo', data);
+        console.log("data", data);
+
+        navigate('/');
     }
+    console.log('sainda', handlerSubmit)
 
     return(
         <C.container>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handlerSubmit}>
                 <input
                  type="text"
                  name="text"
                  id="text"
                  placeholder='Digite' 
-                 onChange={event => setDescription(event.target.value)} 
+                 onChange={e => setDescription(e.target.value)} 
                  value={description}
                 />
             </form>
