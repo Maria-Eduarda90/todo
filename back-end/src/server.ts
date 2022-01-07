@@ -25,7 +25,7 @@ app.use((err: Error, request: Request, response: Response, _next: NextFunction) 
     });
 })
 
-const port = process.env.PORT || 3333;
+const port = 3333;
 
 app.listen(port, () => {
     console.log(`rodando na pota ${port}`)
