@@ -1,23 +1,44 @@
 import MyIcon from '../../assets/icon-cross.svg'
 import * as C from './style';
+import api from '../../services/api';
+import { useEffect, useState } from 'react';
+
+interface todoProps {
+    id: string;
+    description: string;
+}
 
 export const Todo = () => {
+    const [ todos, setTodo ] = useState<todoProps[]>([]);
+
+    useEffect(() => {
+        api.get('/todo').then(response => {
+            setTodo(response.data);
+        })
+    }, []);
+    
     return(
         <C.container>
-            <div className="containerBody">
-                <div className="container">
-                    <p>qualquer coisa</p>
-                    <button>
-                        <img src={MyIcon} alt="X" />
-                    </button>
-                </div>
-                <div className="container">
-                    <p>qualquer coisa</p>
-                    <button>
-                        <img src={MyIcon} alt="X" />
-                    </button>
-                </div>
-            </div>
+            {todos.map(todo => {
+                return(
+                    <>
+                        <div className="container">
+                            key={todo.id}
+                            <p>{todo.description}</p>
+                            <button>
+                                <img src={MyIcon} alt="X" />
+                            </button>
+                        </div>
+                        <div className="container">
+                            key={todo.id}
+                            <p>{todo.description}</p>
+                            <button>
+                                <img src={MyIcon} alt="X" />
+                            </button>
+                        </div>
+                    </>
+                )
+            })}
         </C.container>
     );
 }
