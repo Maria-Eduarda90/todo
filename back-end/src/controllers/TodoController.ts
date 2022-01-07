@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import { TodoRepositories } from '../repositories/TodoRepositories';
+import * as Yup from 'yup';
 
 class TodoController {
     async create(request: Request, response: Response){
@@ -15,6 +16,12 @@ class TodoController {
         const data = {
             description
         }
+
+        const schema = Yup.object().shape({
+            description: Yup.string().required()
+        })
+
+        await schema.validate(data)
 
         const todo = todoRepositories.create(data);
 
