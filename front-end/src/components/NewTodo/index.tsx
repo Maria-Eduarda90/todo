@@ -23,8 +23,8 @@ export const NewTodo = () => {
         console.log("data", data);
 
         navigate('/');
+        setDescription('');
     }
-    console.log('sainda', handlerSubmit)
 
     return(
         <C.container>
