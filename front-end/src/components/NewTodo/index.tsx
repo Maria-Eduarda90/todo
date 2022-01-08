@@ -12,9 +12,12 @@ export const NewTodo = () => {
 
         e.preventDefault();
 
-        const data = new FormData();
+        // const data = new FormData();
+        const data = {
+            description: description,
+        }
 
-        data.append('description', description);
+        // data.append('description', description);
 
         await api.post('/todo', data);
         console.log("data", data);
