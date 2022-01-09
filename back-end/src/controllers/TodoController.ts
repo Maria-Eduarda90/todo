@@ -30,6 +30,16 @@ class TodoController {
         return response.status(201).json(todo);
     }
 
+    async show(request: Request, response: Response){
+        const { id } = request.params;
+
+        const todoRepositories = getCustomRepository(TodoRepositories);
+
+        const todo = await todoRepositories.findOne(id);
+
+        return response.json(todo);
+    }
+
     async delete(request: Request, response:Response){
         const todoDelete = getCustomRepository(TodoRepositories);
         const { id } = request.params;
