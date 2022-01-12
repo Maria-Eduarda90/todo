@@ -1,4 +1,4 @@
-import MyIcon from '../../assets/icon-cross.svg'
+import MyIcon from '../../assets/trash.svg'
 import * as C from './style';
 import api from '../../services/api';
 import { useEffect, useState } from 'react';

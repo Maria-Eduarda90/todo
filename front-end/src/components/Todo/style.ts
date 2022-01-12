@@ -24,8 +24,13 @@ export const container = styled.div `
         border: none;
         cursor: pointer
     }
+
+    .container button img {
+
+    }
     
     .container p {
         font-family: 'Poppins', sans-serif;
+        word-break: break-word;
     }
 `;
