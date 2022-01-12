@@ -4,6 +4,14 @@ import { TodoRepositories } from '../repositories/TodoRepositories';
 import * as Yup from 'yup';
 
 class TodoController {
+    async index (request: Request, response: Response){
+        const todoRepositories = getCustomRepository(TodoRepositories);
+
+        const todo = await todoRepositories.find();
+
+        return response.json(todo);
+    }
+
     async create(request: Request, response: Response){
         const { description } = request.body
 
@@ -28,16 +36,6 @@ class TodoController {
         await todoRepositories.save(todo);
 
         return response.status(201).json(todo);
-    }
-
-    async show(request: Request, response: Response){
-        const { id } = request.params;
-
-        const todoRepositories = getCustomRepository(TodoRepositories);
-
-        const todo = await todoRepositories.findOne(id);
-
-        return response.json(todo);
     }
 
     async delete(request: Request, response:Response){
