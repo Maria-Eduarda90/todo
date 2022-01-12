@@ -11,6 +11,13 @@ interface todoProps {
 export const Todo = () => {
     const [ todos, setTodo ] = useState<todoProps[]>([]);
 
+    const handleSubmitDelete = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        const id = Number(e.view.document.activeElement?.id)
+        if(id){
+            api.delete(`/todo/${id}`);
+        }
+    }
+
     useEffect(() => {
         api.get('/todo').then(response => {
             setTodo(response.data);
@@ -25,8 +32,8 @@ export const Todo = () => {
                     <>
                         <div className="container">
                             <p>{todo.description}</p>
-                            <button>
-                                <img src={MyIcon} alt="X" />
+                            <button id={todo.id} onClick={handleSubmitDelete}>
+                                <img src={MyIcon} alt={todo.id} />
                             </button>
                         </div>
                     </>
