@@ -56,8 +56,8 @@ $ yarn dev or npm dev
 </h1>
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./front-end/src/assets/tododark.png" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./front-end/src/assets/dark.png" />
 </h1>
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./front-end/src/assets/todowhite.png" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./front-end/src/assets/white.png" />
 </h1>
