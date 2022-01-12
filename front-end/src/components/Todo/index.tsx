@@ -13,9 +13,10 @@ export const Todo = () => {
 
     useEffect(() => {
         api.get('/todo').then(response => {
+            setTodo(response.data);
             console.log(response.data);
         })
-    }, []);
+    }, [todos]);
     
     return(
         <C.container>
@@ -23,14 +24,6 @@ export const Todo = () => {
                 return(
                     <>
                         <div className="container">
-                            
-                            <p>{todo.description}</p>
-                            <button>
-                                <img src={MyIcon} alt="X" />
-                            </button>
-                        </div>
-                        <div className="container">
-                            
                             <p>{todo.description}</p>
                             <button>
                                 <img src={MyIcon} alt="X" />
