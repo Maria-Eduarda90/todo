@@ -20,7 +20,7 @@ export const NewTodo = () => {
         // data.append('description', description);
 
         await api.post('/todo', data);
-        console.log("data", data);
+        // console.log("data", data);
 
         navigate('/');
         setDescription('');
