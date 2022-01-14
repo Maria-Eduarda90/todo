@@ -17,10 +17,6 @@ class TodoController {
 
         const todoRepositories = getCustomRepository(TodoRepositories);
 
-        if(!todoRepositories){
-            throw new Error("preencha esse campo");
-        }
-
         const data = {
             description
         }
