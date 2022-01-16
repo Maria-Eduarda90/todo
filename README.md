@@ -41,10 +41,10 @@ $ cd todo
 $ cd back-end
 
 # Instale as dependências
-$ yarn install or npm install
+$ yarn install
 
 # Execute a aplicação em modo de desenvolvimento
-$ yarn dev or npm dev
+$ yarn dev
 
 ```
 
