@@ -8,19 +8,13 @@ export const NewTodo = () => {
     const [ description, setDescription ] = useState('');
 
     const handlerSubmit = async (e: FormEvent) => {
-        console.log('entrada')
 
         e.preventDefault();
-
-        // const data = new FormData();
         const data = {
             description: description,
         }
 
-        // data.append('description', description);
-
         await api.post('/todo', data);
-        // console.log("data", data);
 
         navigate('/');
         setDescription('');
