@@ -27,7 +27,8 @@ export const NewTodo = () => {
                  type="text"
                  name="text"
                  id="text"
-                 placeholder='Digite' 
+                 placeholder='Digite'
+                 required
                  onChange={e => setDescription(e.target.value)} 
                  value={description}
                 />
