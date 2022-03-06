@@ -1,4 +1,4 @@
-export class ErrorsUser{
+export class ErrorsUser {
     public readonly message: string;
     public readonly statusCode: number;
 
