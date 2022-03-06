@@ -13,13 +13,13 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - React
-- styled-components
-- typescript
+- Styled-components
+- Typescript
 - NodeJS
-- typeorm
+- Typeorm
 - Express
-- postgresql
-- axios
+- Postgresql
+- Axios
 
 </br>
 
