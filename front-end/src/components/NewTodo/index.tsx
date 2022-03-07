@@ -8,8 +8,12 @@ export const NewTodo = () => {
     const [ description, setDescription ] = useState('');
 
     const handlerSubmit = async (e: FormEvent) => {
-
         e.preventDefault();
+
+        if(description.trim() === ''){
+            return;
+        }
+
         const data = {
             description: description,
         }
@@ -28,7 +32,6 @@ export const NewTodo = () => {
                  name="text"
                  id="text"
                  placeholder='Digite'
-                 required
                  onChange={e => setDescription(e.target.value)} 
                  value={description}
                 />
