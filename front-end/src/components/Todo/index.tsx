@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 interface todoProps {
     id: string;
     description: string;
+    done: boolean;
 }
 
 export const Todo = () => {
@@ -24,6 +25,12 @@ export const Todo = () => {
             console.log(response.data);
         })
     }, [todos]);
+
+    const onSubmitToggle = (todo: todoProps) => {
+        const index = todos.indexOf(todo);
+        todos[index].done = !todo.done;
+        setTodo([...todos]);
+    }
     
     return(
         <C.container>
@@ -31,6 +38,13 @@ export const Todo = () => {
                 return(
                     <>
                         <div className="container">
+                            <label>
+                                <input
+                                type="checkbox" 
+                                checked={todo.done} 
+                                onChange={() => onSubmitToggle}
+                                />
+                            </label>
                             <p>{todo.description}</p>
                             <button id={todo.id} onClick={handleSubmitDelete}>
                                 <img src={MyIcon} alt={todo.id} />

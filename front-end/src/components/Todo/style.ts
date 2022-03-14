@@ -9,16 +9,19 @@ export const container = styled.div `
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
+
     .container {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        border: 1px solid ${props => props.theme.colors.background};;
+        border: 1px solid ${props => props.theme.colors.background};
         background: ${props => props.theme.colors.secundary};
         box-shadow: 0.25px 0.25rem 0.25rem 0.25rem rgba(17, 76, 116, 0.2);
         padding: 1rem;
         border-radius: 0.25rem;
         margin-bottom: 0.20rem;
     }
+
     .container button {
         background: none;
         border: none;
@@ -26,6 +29,7 @@ export const container = styled.div `
     }
      
     .container p {
+        margin-left: 20px;
         font-family: 'Poppins', sans-serif;
         word-break: break-word;
     }
