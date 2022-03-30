@@ -12,7 +12,7 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- React
+- ReactJS
 - Styled-components
 - Typescript
 - NodeJS
