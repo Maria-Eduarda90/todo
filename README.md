@@ -16,7 +16,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Styled-components
 - Typescript
 - NodeJS
-- Typeorm
+- TypeORM
 - Express
 - Postgresql
 - Axios
