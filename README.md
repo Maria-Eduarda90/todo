@@ -52,7 +52,7 @@ $ yarn dev
 </br>
 
 <h1 align="center"> 
-	🚧  Projeto  🚧
+	Projeto
 </h1>
 
 <h1 align="center">
